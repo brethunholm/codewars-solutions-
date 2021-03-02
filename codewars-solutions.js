@@ -17,7 +17,7 @@ const positiveSum = (arr) => {
   const even_or_odd = num => num % 2 === 0 ? 'Even' : 'Odd'
 
 // Reduce but grow
-let grow = (x) => {
+const grow = (x) => {
     let total = 1;
   for (nums of x) {
     total *= nums
@@ -50,7 +50,7 @@ const summation = (num) => {
   }
 
   // Convert boolean values to strings 'Yes' or 'No'
-  const boolToWord = bool => bool ? 'Yes' : 'No';
+  // const boolToWord = bool => bool ? 'Yes' : 'No';
 
   const boolToWord = bool => bool === true ? bool = 'Yes' : bool = 'No';
 
@@ -98,3 +98,297 @@ function arrayDiff(a, b) {
 function multiply(a, b){
     return a * b
   }
+
+
+//-----------------------2/27--------------------------/
+
+
+// Remove First and Last Character
+
+const removeChar = (str) => {
+  let chars = str.split('')
+  chars.shift();
+  chars.pop()
+  let result = chars.join('')
+  return result;
+ };
+
+
+// Return Negative
+
+function makeNegative(num) {
+  let num = -4;
+  if(!num.toString().includes('-')) {
+    return  (-num)
+  } 
+    return num
+}
+
+// A wolf in sheep's clothing
+// find index of wolf if wolf index is close to you say go away otherwise warn sheep and tell sheep there index
+
+function warnTheSheep(sheep) {
+  const sheep = ["sheep", "wolf", "sheep", "sheep", "sheep", "sheep", "sheep"]
+  let wolfIndex = sheep.indexOf('wolf');
+  let dangerSheep = ((sheep.length -1) - wolfIndex);
+  let lastPosition =  sheep.length -1;
+  if(sheep.length -1 === wolfIndex){
+    return "Pls go away and stop eating my sheep"
+  } else {
+    return `Oi! Sheep number ${dangerSheep}! You are about to be eaten by a wolf!`
+  }
+  }
+
+
+// Opposite Number
+function opposite(num) {
+   result = Math.sign(num)
+   if( result === 1) {
+     return -num
+   } else if( result === -1) {
+     return Math.abs(num)
+   } else {
+     return 0
+   }
+}
+
+// Convert Number to a string
+
+function numberToString(num) {
+  return num.toString();
+}
+
+// Remove string spaces 
+
+// function noSpace(x){
+// let result = x.split(' ')
+// result = result.join('');
+// console.log(result)
+// }
+
+const noSpace = x => x.split(' ').join('');
+noSpace(x)
+
+
+// Vowel count
+
+function getCount(s) {
+  const s = 'hi bre';
+  let vowelsCount = 0;
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+    if(char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
+      vowelsCount += 1;    }
+  }
+  return vowelsCount;
+}
+
+
+// Highest and Lowest 
+
+
+function highAndLow(numbers){
+  numbers = numbers.replace(/\s+/g, '');
+  numbers = Array.from(numbers)
+  numbers = numbers.sort()
+  result = `${numbers[0]} ${numbers[(numbers.length -1)]}`
+  return result
+  }
+
+// works if only positive numbers
+// function highAndLow(numbers){
+//   numbers = numbers.replace(/\s+/g, '');
+//   numbers = Array.from(numbers)
+//   numbers = numbers.sort((a,b) => a - b);
+//   console.log(numbers)
+//   result = `${numbers[0]} ${numbers[(numbers.length -1)]}`
+//   return result
+//   }
+
+
+function highAndLow(numbers){
+  numbers = numbers.split(' ');
+  console.log(numbers)
+  let a = Math.max(...numbers)
+  console.log(a)
+  return `${Math.max(...numbers)} ${Math.min(...numbers)}`;
+}
+
+//-----------------------3/1--------------------------------------//
+
+
+// Get the Middle Character
+// if word odd return middle char, if word even return middle 2 chars
+function getMiddle(word)
+{
+  const a = word.split('')
+  let middle = Math.ceil(a.length/2) - 1;
+  
+  if((a.length) % 2 === 0) {
+    return `${word[middle]}${word[middle + 1]}`
+  } else {
+    return word[middle]
+  }
+}
+
+// Descending Order
+
+function descendingOrder(num){
+  num = num.toString();
+  let a = num.split('');
+  a = a.sort((a, b) => b - a);
+  let result = a.join('');
+  return parseInt(result)
+}
+
+
+// List filtering 
+
+const filter_list = (l) =>  l.filter(item => typeof item === 'number' );
+  
+
+clearConsole();
+
+
+// Odd or Even
+// Given a list of integers, determine whether the sum of its elements is odd or even.
+
+function oddOrEven(array) {
+  let total = array.reduce((a, b) => a + b, 0);
+  if(total % 2 === 0) {
+    return 'even'
+  } else {
+    return 'odd'
+  }
+}
+
+// Shortest Word
+// given a string of words, return the length of the shortest word(s).
+
+function findShort(s){
+  let a = s.split(' ');
+  let length = a.map(word => word.length);
+  length = length.sort((a, b) => a - b);;
+  return length[0]
+}
+
+
+// Sum of two lowest positive integers 
+
+function sumTwoSmallestNumbers(numbers) {  
+  let sorted = numbers.sort((a, b) => a - b);
+  return sorted[0] + sorted[1];
+}
+
+
+// find the smallest integer in the array
+
+
+function findTheSmallestInteger(a) {
+  a = a.sort((a, b) => a - b);
+  return a[0]
+}
+
+
+// Disemvowel Trolls
+// Create a function that removes all vowels from a string 
+
+
+// function disemvowel(str) {
+//   return str.replace(/[aeiou]/gi, '');
+// }
+
+
+disemvowel = (str) => str.replace(/[aeiou]/gi, '');
+
+
+// Sum of digits - digital root 
+
+
+
+
+// function digital_root(num) {
+//   num = num.toString();
+//   num = num.split('').map(Number).reduce((a, b) => a + b, 0);
+//   return num
+//  }
+
+// ^ close but not digital root, does not work for numbers that have a sum greater than 9 
+
+function digital_root(num) {
+  return (num - 1) % 9 + 1;
+}
+
+
+// Create a phone number
+// Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number
+
+
+// function createPhoneNumber(n){
+//   return `(${n[0]}${n[1]}${n[2]}) ${n[3]}${n[4]}${n[5]}-${n[6]}${n[7]}${n[8]}${n[9]}`
+// }
+
+function createPhoneNumber(numbers){
+  var format = "(xxx) xxx-xxxx";
+  
+  for(var i = 0; i < numbers.length; i++)
+  {
+    format = format.replace('x', numbers[i]);
+  }
+  
+  return format;
+}
+
+
+// Friend or Foe
+// create a function that filters out names and returns an array including only names with 4 letters
+
+
+const isFriend = friends => friends.filter(friend => friend.length === 4);
+
+
+// function friend(friends){
+//   let coolFriends = friends.filter(friend => friend.length === 4)
+//   return coolFriends
+// }
+
+
+
+// Is he going to survive?
+
+// function hero(bullets, dragons){
+//   if (bullets >= dragons * 2) {
+//     return true
+//   } else {
+//     return false
+//   }
+
+//   }
+
+//   hero = (bullets, dragons) => (bullets >= dragons * 2) ? true : false;
+  
+// Array plus an array 
+
+let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+
+
+function arrayPlusArray(arr1, arr2) {
+  let arr = arr1.concat(arr2).reduce((a, b) => a + b, 0);
+  return arr
+}
+
+
+// function arrayPlusArray(arr1, arr2) {
+//   let arr = arr1.concat(arr2);
+//   let result =  arr.reduce((a, b) => a + b, 0);
+//   return result
+// }
+
+
+// Keep hydrated 
+
+function litres(time) {
+  return Math.floor(time*0.5)
+}
+
