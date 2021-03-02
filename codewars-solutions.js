@@ -139,7 +139,6 @@ function warnTheSheep(sheep) {
   }
   }
 
-
 // Opposite Number
 function opposite(num) {
    result = Math.sign(num)
@@ -241,7 +240,6 @@ function descendingOrder(num){
   return parseInt(result)
 }
 
-
 // List filtering 
 
 const filter_list = (l) =>  l.filter(item => typeof item === 'number' );
@@ -305,8 +303,6 @@ disemvowel = (str) => str.replace(/[aeiou]/gi, '');
 // Sum of digits - digital root 
 
 
-
-
 // function digital_root(num) {
 //   num = num.toString();
 //   num = num.split('').map(Number).reduce((a, b) => a + b, 0);
@@ -365,13 +361,9 @@ const isFriend = friends => friends.filter(friend => friend.length === 4);
 
 //   }
 
-//   hero = (bullets, dragons) => (bullets >= dragons * 2) ? true : false;
+  hero = (bullets, dragons) => (bullets >= dragons * 2) ? true : false;
   
 // Array plus an array 
-
-let arr1 = [1, 2, 3];
-let arr2 = [4, 5, 6];
-
 
 function arrayPlusArray(arr1, arr2) {
   let arr = arr1.concat(arr2).reduce((a, b) => a + b, 0);
@@ -379,16 +371,118 @@ function arrayPlusArray(arr1, arr2) {
 }
 
 
-// function arrayPlusArray(arr1, arr2) {
-//   let arr = arr1.concat(arr2);
-//   let result =  arr.reduce((a, b) => a + b, 0);
-//   return result
-// }
+function arrayPlusArray(arr1, arr2) {
+  let arr = arr1.concat(arr2);
+  let result =  arr.reduce((a, b) => a + b, 0);
+  return result
+}
 
 
 // Keep hydrated 
 
 function litres(time) {
   return Math.floor(time*0.5)
+}
+
+
+//----------------------------------------3/2--------------------------------------------------------//
+
+
+// Spinning Words 
+// Write a function that takes in a string of one or more words, and returns the same string, 
+//but with all five or more letter words reversed  Strings passed in will consist of only letters and spaces. 
+//Spaces will be included only when more than one word is present.
+
+
+// function spinWords(){
+//  let a =  str.split(' ');
+//   console.log(a)
+//   let length = a.map(word => {if(word.length >= 5){
+//     console.log(word)
+//   }})
+//   console.log(length) }
+
+function spinWords(words){
+  return words.split(' ').map(function (word) {
+    return (word.length > 4) ? word.split('').reverse().join('') : word;
+  }).join(' ');
+}
+
+// String ends with 
+// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+
+
+
+// function solution(str, ending){
+//   let a = str.split('');
+ 
+//   let b = ending.split('');
+ 
+//    a = a.slice(((a.length)  - (ending.split('').length))) 
+  
+//  if(JSON.stringify(a)==JSON.stringify(b)) {
+//    return true
+//  } else {
+//    return false
+//  }
+  
+//  }
+ 
+
+// Or just use the method string endsWith()
+
+function solution(str, ending){
+  return str.endsWith(ending);
+}
+
+// Reversed words 
+
+const reverseWords = (str) => str.split(' ').reverse().join(' ');
+
+
+// function reverseWords(str){
+//   str = str.split(' ');
+//   let reversedString = str.reverse().join(' ').toString();
+//   return reversedString
+// }
+
+// Format a string of names like 'Bart, Lisa & Maggie'.
+
+
+function list(names){
+  let str = '';
+  if (names.length !== 0) {
+    let last = names.pop();
+    str = names.map( (val, i, arr) => {
+      if (i !== arr[arr.length - 1]) {
+        return val.name;
+      }
+    }).join(', ')
+     
+    str += str !== '' ? ' & ' + last.name : last.name;
+  }
+   
+  return str;
+}
+
+// Convert to camel case
+
+
+function toCamelCase(str){
+  let newArray = [];
+  
+  if(str.includes('-')) {
+    str = str.split('-');
+    for (let i = 1; i < str.length; i++) {
+      str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+  }
+  } else {
+   str = str.split('_'); 
+   for (let i = 1; i < str.length; i++) {
+    str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+}
+   
+  }
+  return str.join('')
 }
 
