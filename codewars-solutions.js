@@ -486,3 +486,18 @@ function toCamelCase(str){
   return str.join('')
 }
 
+//-------------------------3/3----------------------------//
+
+//Square every digit
+
+function squareDigits(num){
+  let a = num.toString().split('').map(Number);
+  return parseInt(a.map(i => i * i).join(''))
+}
+
+// function squareDigits(num){
+//   let a = num.toString().split('')
+//   let numbers = a.map(Number);
+//   let sqrt = numbers.map(i => i * i)
+//   return parseInt(sqrt.join(''))
+// }
