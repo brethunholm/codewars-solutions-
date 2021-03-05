@@ -501,3 +501,49 @@ function squareDigits(num){
 //   let sqrt = numbers.map(i => i * i)
 //   return parseInt(sqrt.join(''))
 // }
+
+
+//--------------------------3/4---------------------------------//
+
+// A square of squares 
+
+const isSquare = function(n){
+  return Math.sqrt(n) % 1 === 0;
+}
+
+
+// Credit card mask
+// function taking in a string and returning the string with all but the last 4 letters or nums replaced by ##
+
+// return masked string
+
+function maskify(cc) {
+  let a = cc.split('');
+  if(a.length >= 4){
+    const last4 = a.splice((a.length - 4)).join('');
+  let firstPart = a.splice(0,(a.length));
+  firstPart = (new Array(firstPart.length).fill('#')).join('');
+  return `${firstPart}${last4}`
+  }
+  else return cc
+  }
+
+  // function maskify(cc) {
+  //   return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
+  // }
+  
+
+// Reverse words
+
+
+
+reverseWords = words => words.split('').reverse().join('').split(' ').reverse().join(' ');
+
+
+
+// .reverse().join("").split(" ").reverse().join(" ")
+
+// function reverseWords(str) {
+//   let a = str.split("").reverse().join("").split(" ").reverse().join(" ")
+//   return a
+//  }
