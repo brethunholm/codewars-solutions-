@@ -547,3 +547,49 @@ reverseWords = words => words.split('').reverse().join('').split(' ').reverse().
 //   let a = str.split("").reverse().join("").split(" ").reverse().join(" ")
 //   return a
 //  }
+
+//-------------------------------------3/8---------------------------//
+
+// Find the odd int
+//Given an array of integers, find the one that appears an odd number of times
+
+
+function findOdd(arr) {
+let count = 0;
+for (let i = 0; i < arr.length; i++) {
+  for( let j = 0; j< arr.length; j++){
+    if(arr[i] == arr[j]){
+      count++
+    }
+  } 
+  if(count % 2 != 0) {
+    return arr[i]
+  }
+  
+  }
+    
+};
+
+
+
+// Highest and lowest 
+
+let numbers = "4 5 29 54 4 0 -214 542 -64 1 -3 6 -6"
+
+function highAndLow(numbers){
+ numbers = numbers.split(' ');
+  numbers.sort(function(a, b){
+    return a - b;
+  })
+  return `${numbers[numbers.length-1]} ${numbers[0]}`
+  }
+  
+  
+
+
+
+console.log(highAndLow(numbers))
+
+
+
+
