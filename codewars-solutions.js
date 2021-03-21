@@ -501,3 +501,215 @@ function squareDigits(num){
 //   let sqrt = numbers.map(i => i * i)
 //   return parseInt(sqrt.join(''))
 // }
+
+
+//--------------------------3/4---------------------------------//
+
+// A square of squares 
+
+const isSquare = function(n){
+  return Math.sqrt(n) % 1 === 0;
+}
+
+
+// Credit card mask
+// function taking in a string and returning the string with all but the last 4 letters or nums replaced by ##
+
+// return masked string
+
+function maskify(cc) {
+  let a = cc.split('');
+  if(a.length >= 4){
+    const last4 = a.splice((a.length - 4)).join('');
+  let firstPart = a.splice(0,(a.length));
+  firstPart = (new Array(firstPart.length).fill('#')).join('');
+  return `${firstPart}${last4}`
+  }
+  else return cc
+  }
+
+  // function maskify(cc) {
+  //   return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
+  // }
+  
+
+// Reverse words
+
+
+
+reverseWords = words => words.split('').reverse().join('').split(' ').reverse().join(' ');
+
+
+
+// .reverse().join("").split(" ").reverse().join(" ")
+
+// function reverseWords(str) {
+//   let a = str.split("").reverse().join("").split(" ").reverse().join(" ")
+//   return a
+//  }
+
+//-------------------------------------3/8---------------------------//
+
+// Find the odd int
+//Given an array of integers, find the one that appears an odd number of times
+
+
+function findOdd(arr) {
+let count = 0;
+for (let i = 0; i < arr.length; i++) {
+  for( let j = 0; j< arr.length; j++){
+    if(arr[i] == arr[j]){
+      count++
+    }
+  } 
+  if(count % 2 != 0) {
+    return arr[i]
+  }
+  
+  }
+    
+};
+
+
+
+// Highest and lowest 
+
+
+function highAndLow(numbers){
+ numbers = numbers.split(' ');
+  numbers.sort(function(a, b){
+    return a - b;
+  })
+  return `${numbers[numbers.length-1]} ${numbers[0]}`
+  }
+  
+  
+
+// Sort numbers 
+
+function solution(nums) {
+  if (nums === [] || nums === null) {
+    return []
+  } else{
+    nums.sort((a, b) =>  a - b);
+  return nums
+  }
+  
+}
+
+
+// Remove the minimum 
+
+
+// function removeSmallest(numbers) {
+//   let newNums = numbers.sort((a,b) => a - b);
+//   let result = newNums.slice(0,(newNums.length-1));
+//   return result
+// }
+
+function removeSmallest(numbers) {
+  let lowest = 5;
+  for (const num of numbers) {
+    if(num < lowest) {
+      lowest = num;
+    }
+  }
+
+return lowest
+}
+
+
+
+
+//  -----------------------------3/18-------------------------
+
+
+// Replace with alphabet position 
+
+
+function alphabetPosition(text) {
+  let array = text.split(' ').join('').toLowerCase().split('');
+  let answer = [];
+  const alpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+  array.forEach(letter => {
+    let index = alpha.indexOf(letter);
+    let alphabetPosition = index + 1;
+    if(alphabetPosition > 0){
+      answer.push(alphabetPosition);
+    }
+    return 
+  })
+
+
+  return answer.join(' ')
+
+
+}
+
+
+
+// Your order please
+
+const words = 'luk3e br1e mu5ch lov2es so4'
+
+function order(words){
+  const  array = words.split(' ');
+  const sortedArray = [];
+  for(i = 0; i <= array.length; i++) {
+    for(j = 0; j < array.length; j++) {
+      if(array[j].indexOf(i) >= 0) {
+        sortedArray.push(array[j]);
+      }
+    }
+  }
+  return sortedArray.join(' ');
+}
+
+
+//----------------------------3/20-------------------------------------------//
+
+
+// Human readable code 
+
+function humanReadable(seconds) {
+  // TODO
+ const secondsInHour = 3600
+ let hours = seconds / secondsInHour
+ 
+ let secondsLeft  =  seconds % secondsInHour
+ let minutes = secondsLeft / 60
+ let finalSeconds = secondsLeft % 60
+ 
+
+ hours = Math.floor(hours)
+ minutes = Math.floor(minutes)
+ finalSeconds = Math.floor(finalSeconds)
+
+
+ return `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${finalSeconds < 10 ? '0' : ''}${finalSeconds}`
+}
+
+
+// Moving zeros to the end 
+
+
+ function  moveZeros(arr){
+   
+  let count = 0
+  for( i = 0; i < arr.length; i++) 
+  if(arr[i] === 0) {
+   count++
+  }
+ 
+ let answer = arr.filter(element => element !== 0 )
+
+ for (let i = 0; i < count; i++) {
+   answer.push(0)
+ }
+ return answer
+ }
+
+
+
+
+
