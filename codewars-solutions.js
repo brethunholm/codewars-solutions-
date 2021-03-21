@@ -574,6 +574,10 @@ for (let i = 0; i < arr.length; i++) {
 
 // Highest and lowest 
 
+<<<<<<< HEAD
+=======
+let numbers = "4 5 29 54 4 0 -214 542 -64 1 -3 6 -6"
+>>>>>>> 1c322d102de02fd583f112d871ec5c0500460758
 
 function highAndLow(numbers){
  numbers = numbers.split(' ');
@@ -585,6 +589,7 @@ function highAndLow(numbers){
   
   
 
+<<<<<<< HEAD
 // Sort numbers 
 
 function solution(nums) {
@@ -709,6 +714,11 @@ function humanReadable(seconds) {
  return answer
  }
 
+=======
+
+
+console.log(highAndLow(numbers))
+>>>>>>> 1c322d102de02fd583f112d871ec5c0500460758
 
 
 
