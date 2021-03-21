@@ -574,10 +574,7 @@ for (let i = 0; i < arr.length; i++) {
 
 // Highest and lowest 
 
-<<<<<<< HEAD
-=======
 let numbers = "4 5 29 54 4 0 -214 542 -64 1 -3 6 -6"
->>>>>>> 1c322d102de02fd583f112d871ec5c0500460758
 
 function highAndLow(numbers){
  numbers = numbers.split(' ');
@@ -589,7 +586,6 @@ function highAndLow(numbers){
   
   
 
-<<<<<<< HEAD
 // Sort numbers 
 
 function solution(nums) {
@@ -714,12 +710,45 @@ function humanReadable(seconds) {
  return answer
  }
 
-=======
+
+// ----------------------------3/21----------------------------------
+
+// Opposites Attract
 
 
-console.log(highAndLow(numbers))
->>>>>>> 1c322d102de02fd583f112d871ec5c0500460758
+function lovefunc(flower1, flower2){
+  return flower1 % 2 === 0 && flower2 % 2 === 1 || flower1 % 2 === 1 && flower2 % 2 === 0
+}
+  
+ 
+// IQ test 
 
 
 
+function iqTest(numbers){
+ let array = numbers.split(' ')
+const odd = array.filter(num => num % 2 === 1)
+const even = array.filter( num => num % 2 === 0)
 
+if(even.length === 1) {
+  return array.indexOf(even[0]) + 1
+} else {
+  return array.indexOf(odd[0]) + 1
+}
+
+
+}
+
+
+// Meeting 
+
+s = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
+
+
+function meeting(s) {
+  let string = s.toUpperCase().split(';')
+                .map(x => x.split(':').reverse().join(', '))
+                .sort()
+                .join(')(')
+  return '(' + string + ')'
+}
