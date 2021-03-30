@@ -752,3 +752,76 @@ function meeting(s) {
                 .join(')(')
   return '(' + string + ')'
 }
+
+
+
+
+//------------------------3/29-------------------------------------//
+
+// Panagram 
+
+
+function isPangram(string){
+  let a = string.toLowerCase().split('')
+  const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+  return alphabet.every(el => a.includes(el))
+}
+
+// Exes and ohs
+
+
+
+function XO(str) {
+  const a = str.toLowerCase().split('')
+  const x = a.filter(letter => letter === 'x');
+  const y = a.filter(letter => letter === 'o')
+ 
+  if(x.length === y.length) {
+    return true 
+  } else {
+    return false
+  }
+    
+  }
+
+
+
+
+// Pig latin 
+
+const str = 'Pig latin is cool !'
+
+
+
+ 
+
+
+function pigIt(str){
+  console.log(str);
+    let a = str.split(' ')
+
+    console.log(a);
+    let pig = '';
+  for (let i = 0; i < a.length; i++) {
+      const word = a[i];
+      let wordA = word.split('')
+      // console.log(wordA);
+      let first = wordA.splice(0,1)
+      // console.log(first);
+      wordA.push(first[0])
+      // console.log(wordA);
+     final = wordA.join('')
+     console.log(final);
+     if (final == '?' || final == '!') {
+      pig += ` ${final}`
+    } else {
+      pig += ` ${final}ay`
+
+    }
+    }
+   let pl = pig.split(' ')
+   pl.shift()
+   return pl.join(' ')
+  }
+
+  console.log(pigIt(str))
