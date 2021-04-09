@@ -878,3 +878,25 @@ return count
 
 
 const basicOp =  (operation, value1, value2) => eval(`${value1} ${operation} ${value2}`)
+
+
+// Cat and Mouse 
+
+function catMouse(x){
+  let str = x.replace(/\s/g,'')
+  console.log(x);
+if(str.length > 5) {
+  return 'Escaped!'
+} else {
+  return 'Caught!'
+}
+}
+
+// Slaphead 
+
+
+function bald(x){
+  let hairCount = 0;
+
+  let result = []
+}
