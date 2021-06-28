@@ -912,25 +912,54 @@
 
 // Sum of strings
 
-function sumStr(a,b) {
-  console.log(a,b);
-  let numA = a
-  let numB = b 
-if(a === '') {
-   numA = 0 
+// function sumStr(a,b) {
+//   console.log(a,b);
+//   let numA = a
+//   let numB = b 
+// if(a === '') {
+//    numA = 0 
   
   
+// }
+// if(b === '') {
+//    numB = 0
+
+// }
+//  let result = (parseInt(numA) + parseInt(numB)).toString()
+//  return result
+// }
+
+// const a = ''
+// const b = '2'
+
+// console.log(sumStr(a,b));
+
+// Array Madness
+
+const a = [ 4, 5, 6 ]
+const b = [ 1, 2, 3 ]
+
+// function arrayMadness(a, b) {
+//   console.log(a);
+//   console.log(b);
+// let totalA = 0
+// let totalB = 0
+// for (let i = 0; i < a.length; i++) {
+//   const sqrt = Math.floor(Math.sqrt(a[i]))
+//   totalA = totalA + sqrt
+// }
+
+// for (let i = 0; i < b.length; i++) {
+//   const cube = Math.floor(Math.cbrt(b[i]))
+//   totalB = totalB + cube
+
+// }
+// console.log(totalA, totalB);
+// return totalA > totalB
+
+// }
+
+function arrayMadness(a, b) {
+  return a.reduce( (sum, el) => sum + el ** 2, 0) >
+         b.reduce( (sum, el) => sum + el ** 3, 0);
 }
-if(b === '') {
-   numB = 0
-
-}
- let result = (parseInt(numA) + parseInt(numB)).toString()
- return result
-}
-
-const a = ''
-const b = '2'
-
-console.log(sumStr(a,b));
-
